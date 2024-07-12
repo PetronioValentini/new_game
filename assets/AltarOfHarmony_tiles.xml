@@ -1,0 +1,327 @@
+<TextureAtlas imagePath="sheet.png">
+  <SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_0003_A"
+    TEX_NAME="AltarOfHarmony_03"
+    TEX_X="367"
+    TEX_Y="356"
+    TEX_WIDTH="71"
+    TEX_HEIGHT="71"
+    PARTS_WIDTH="0.208008"
+    PARTS_HEIGHT="0.208008"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_0003_B"
+    TEX_NAME="AltarOfHarmony_03"
+    TEX_X="447"
+    TEX_Y="357"
+    TEX_WIDTH="61"
+    TEX_HEIGHT="73"
+    PARTS_WIDTH="0.178711"
+    PARTS_HEIGHT="0.213867"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_0004"
+    TEX_NAME="AltarOfHarmony_03"
+    TEX_X="281"
+    TEX_Y="356"
+    TEX_WIDTH="73"
+    TEX_HEIGHT="68"
+    PARTS_WIDTH="0.213867"
+    PARTS_HEIGHT="0.199219"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_0005_A"
+    TEX_NAME="AltarOfHarmony_03"
+    TEX_X="294"
+    TEX_Y="234"
+    TEX_WIDTH="110"
+    TEX_HEIGHT="99"
+    PARTS_WIDTH="0.322266"
+    PARTS_HEIGHT="0.290039"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_0005_B"
+    TEX_NAME="AltarOfHarmony_03"
+    TEX_X="407"
+    TEX_Y="233"
+    TEX_WIDTH="98"
+    TEX_HEIGHT="81"
+    PARTS_WIDTH="0.287109"
+    PARTS_HEIGHT="0.237305"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_0005_C"
+    TEX_NAME="AltarOfHarmony_03"
+    TEX_X="177"
+    TEX_Y="353"
+    TEX_WIDTH="98"
+    TEX_HEIGHT="79"
+    PARTS_WIDTH="0.287109"
+    PARTS_HEIGHT="0.231445"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_0008"
+    TEX_NAME="AltarOfHarmony_03"
+    TEX_X="326"
+    TEX_Y="121"
+    TEX_WIDTH="151"
+    TEX_HEIGHT="93"
+    PARTS_WIDTH="0.442383"
+    PARTS_HEIGHT="0.272461"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_0009"
+    TEX_NAME="AltarOfHarmony_03"
+    TEX_X="0"
+    TEX_Y="434"
+    TEX_WIDTH="161"
+    TEX_HEIGHT="70"
+    PARTS_WIDTH="0.47168"
+    PARTS_HEIGHT="0.205078"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_0010"
+    TEX_NAME="AltarOfHarmony_03"
+    TEX_X="0"
+    TEX_Y="349"
+    TEX_WIDTH="175"
+    TEX_HEIGHT="75"
+    PARTS_WIDTH="0.512695"
+    PARTS_HEIGHT="0.219727"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_0014"
+    TEX_NAME="AltarOfHarmony_03"
+    TEX_X="0"
+    TEX_Y="233"
+    TEX_WIDTH="271"
+    TEX_HEIGHT="113"
+    PARTS_WIDTH="0.793945"
+    PARTS_HEIGHT="0.331055"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_0017"
+    TEX_NAME="AltarOfHarmony_03"
+    TEX_X="0"
+    TEX_Y="121"
+    TEX_WIDTH="306"
+    TEX_HEIGHT="113"
+    PARTS_WIDTH="0.896484"
+    PARTS_HEIGHT="0.331055"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_0020_A"
+    TEX_NAME="AltarOfHarmony_03"
+    TEX_X="42"
+    TEX_Y="0"
+    TEX_WIDTH="415"
+    TEX_HEIGHT="119"
+    PARTS_WIDTH="1.21582"
+    PARTS_HEIGHT="0.348633"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_0020_B"
+    TEX_NAME="AltarOfHarmony_03"
+    TEX_X="164"
+    TEX_Y="431"
+    TEX_WIDTH="347"
+    TEX_HEIGHT="80"
+    PARTS_WIDTH="1.0166"
+    PARTS_HEIGHT="0.234375"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_0025_A"
+    TEX_NAME="AltarOfHarmony_02"
+    TEX_X="21"
+    TEX_Y="316"
+    TEX_WIDTH="473"
+    TEX_HEIGHT="102"
+    PARTS_WIDTH="1.38574"
+    PARTS_HEIGHT="0.298828"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_0025_B"
+    TEX_NAME="AltarOfHarmony_02"
+    TEX_X="26"
+    TEX_Y="419"
+    TEX_WIDTH="456"
+    TEX_HEIGHT="92"
+    PARTS_WIDTH="1.33594"
+    PARTS_HEIGHT="0.269531"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_0030_1/2"
+    TEX_NAME="AltarOfHarmony_02"
+    TEX_X="219"
+    TEX_Y="121"
+    TEX_WIDTH="292"
+    TEX_HEIGHT="90"
+    PARTS_WIDTH="0.855469"
+    PARTS_HEIGHT="0.263672"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_0030_2/2"
+    TEX_NAME="AltarOfHarmony_02"
+    TEX_X="0"
+    TEX_Y="218"
+    TEX_WIDTH="259"
+    TEX_HEIGHT="91"
+    PARTS_WIDTH="0.758789"
+    PARTS_HEIGHT="0.266602"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_0035_1/2"
+    TEX_NAME="AltarOfHarmony_02"
+    TEX_X="91"
+    TEX_Y="4"
+    TEX_WIDTH="420"
+    TEX_HEIGHT="112"
+    PARTS_WIDTH="1.23047"
+    PARTS_HEIGHT="0.328125"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_0035_2/2"
+    TEX_NAME="AltarOfHarmony_02"
+    TEX_X="0"
+    TEX_Y="120"
+    TEX_WIDTH="215"
+    TEX_HEIGHT="97"
+    PARTS_WIDTH="0.629883"
+    PARTS_HEIGHT="0.28418"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_0040_1/3"
+    TEX_NAME="AltarOfHarmony_01"
+    TEX_X="383"
+    TEX_Y="318"
+    TEX_WIDTH="128"
+    TEX_HEIGHT="74"
+    PARTS_WIDTH="0.375"
+    PARTS_HEIGHT="0.216797"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_0040_2/3"
+    TEX_NAME="AltarOfHarmony_01"
+    TEX_X="0"
+    TEX_Y="415"
+    TEX_WIDTH="512"
+    TEX_HEIGHT="96"
+    PARTS_WIDTH="1.5"
+    PARTS_HEIGHT="0.28125"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_0040_3/3"
+    TEX_NAME="AltarOfHarmony_02"
+    TEX_X="0"
+    TEX_Y="2"
+    TEX_WIDTH="90"
+    TEX_HEIGHT="93"
+    PARTS_WIDTH="0.263672"
+    PARTS_HEIGHT="0.272461"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_0050_1/2"
+    TEX_NAME="AltarOfHarmony_01"
+    TEX_X="0"
+    TEX_Y="211"
+    TEX_WIDTH="512"
+    TEX_HEIGHT="105"
+    PARTS_WIDTH="1.5"
+    PARTS_HEIGHT="0.307617"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_0050_2/2"
+    TEX_NAME="AltarOfHarmony_01"
+    TEX_X="0"
+    TEX_Y="318"
+    TEX_WIDTH="382"
+    TEX_HEIGHT="95"
+    PARTS_WIDTH="1.11914"
+    PARTS_HEIGHT="0.27832"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_Fl_A"
+    TEX_NAME="AltarOfHarmony_01"
+    TEX_X="0"
+    TEX_Y="1"
+    TEX_WIDTH="512"
+    TEX_HEIGHT="102"
+    PARTS_WIDTH="1.5"
+    PARTS_HEIGHT="0.298828"
+/>
+
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_Fl_B"
+    TEX_NAME="AltarOfHarmony_01"
+    TEX_X="0"
+    TEX_Y="104"
+    TEX_WIDTH="512"
+    TEX_HEIGHT="106"
+    PARTS_WIDTH="1.5"
+    PARTS_HEIGHT="0.310547"
+/>
+<!--
+<SubTexture 
+    CATEGORY="Category_AltarOfHarmony"
+    PARTNAME="AltarOfHarmony_Obj"
+    TEX_NAME="LifeWoodland_04"
+    TEX_X="364"
+    TEX_Y="189"
+    TEX_WIDTH="147"
+    TEX_HEIGHT="138"
+    PARTS_WIDTH="0.430664"
+    PARTS_HEIGHT="0.404297"
+/>
+-->
+
+</TextureAtlas>
