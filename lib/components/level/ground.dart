@@ -4,7 +4,7 @@ class Ground extends SpriteComponent {
   Ground(Vector2 position, Sprite sprite)
       : super(
           sprite: sprite,
-          anchor: Anchor.bottomLeft, // bottomLeft centerLeft
+          anchor: Anchor.bottomLeft,
           position: position,
         ) {
     // Define o tamanho do componente com base no sprite
