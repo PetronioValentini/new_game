@@ -310,18 +310,4 @@
     PARTS_WIDTH="1.5"
     PARTS_HEIGHT="0.310547"
 />
-<!--
-<SubTexture 
-    CATEGORY="Category_AltarOfHarmony"
-    PARTNAME="AltarOfHarmony_Obj"
-    TEX_NAME="LifeWoodland_04"
-    TEX_X="364"
-    TEX_Y="189"
-    TEX_WIDTH="147"
-    TEX_HEIGHT="138"
-    PARTS_WIDTH="0.430664"
-    PARTS_HEIGHT="0.404297"
-/>
--->
-
 </TextureAtlas>
