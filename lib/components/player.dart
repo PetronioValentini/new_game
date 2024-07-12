@@ -1,21 +1,23 @@
 import 'package:flame/components.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
-import 'package:new_game/components/level/body_component_with_user_data.dart';
-import 'package:new_game/components/level/ground.dart';
+//import 'package:new_game/components/level/body_component_with_user_data.dart';
 
 const playerSize = 100.0;
 
 enum PlayerState { idle }
 
-class Player extends BodyComponentWithUserData with ContactCallbacks {
+class Player extends BodyComponent {
   late final SpriteAnimationGroupComponent<PlayerState> animationGroup;
+  Vector2 velocity = Vector2.zero();
+  final double _gravity = 9.8;
+  final double _jumpForce = 700;
+  final double _terminalVelocity = 300;
 
   Player()
       : super(
-          //renderBody: true,
+          renderBody: true,
           bodyDef: BodyDef()
-            ..bullet = true
-            ..position = Vector2(500, 300)
+            ..position = Vector2(800, -500)
             ..type = BodyType.dynamic,
           fixtureDefs: [
             FixtureDef(CircleShape()..radius = playerSize / 2)
@@ -24,8 +26,6 @@ class Player extends BodyComponentWithUserData with ContactCallbacks {
               ..friction = 0.5,
           ],
         );
-  
-  
 
   @override
   Future<void> onLoad() async {
@@ -38,7 +38,7 @@ class Player extends BodyComponentWithUserData with ContactCallbacks {
       },
       current: PlayerState.idle,
       size: Vector2.all(playerSize),
-      anchor: Anchor.bottomLeft,
+      anchor: Anchor.center,
     );
 
     add(animationGroup); // Adicione a animação ao componente
@@ -60,24 +60,22 @@ class Player extends BodyComponentWithUserData with ContactCallbacks {
 
   @override
   void update(double dt) {
-    super.update(dt);
-    animationGroup.position =
-        body.position; // Sincroniza a animação com o corpo
+    _applyGravity(dt);
+    //position.y += 1;
+    animationGroup.position; 
     animationGroup.angle = body.angle; // Sincroniza o ângulo
+
+
+    super.update(dt);
+
+    //animationGroup.angle = body.angle;
   }
 
-  @override
-  void beginContact(Object other, Contact contact) {
-    print('Início do contato');
-    if (other is Ground) {
-      print('Colidiu com o chão');
-    }
+  void _applyGravity(double dt) {
+    velocity.y += _gravity;
+    velocity.y = velocity.y.clamp(-_jumpForce, _terminalVelocity);
+    position.y += velocity.y * dt;
   }
 
-  @override
-  void endContact(Object other, Contact contact) {
-    if (other is Ground) {
-      print('Saiu do chão');
-    }
-  }
+  
 }

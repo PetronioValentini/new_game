@@ -9,11 +9,13 @@ import 'package:new_game/components/player.dart';
 class MyPhysicsGame extends Forge2DGame {
   MyPhysicsGame()
       : super(
+            gravity: Vector2(0, 10),
             camera:
                 CameraComponent.withFixedResolution(width: 1800, height: 1200),
-            zoom: 1);
+            zoom: 1.0);
 
   late Player player;
+
   late final XmlSpriteSheet tiles;
   late final GroundManager groundManager;
 
@@ -30,8 +32,6 @@ class MyPhysicsGame extends Forge2DGame {
       imagesToLoad.map((imageName) => images.load(imageName)),
     );
 
-    //await images.loadAllImages();
-
     tiles = XmlSpriteSheet(
       imagesMap: Map.fromIterables(imagesToLoad, loadedImages),
       xmlData: await rootBundle.loadString('assets/AltarOfHarmony_tiles.xml'),
@@ -40,14 +40,14 @@ class MyPhysicsGame extends Forge2DGame {
     groundManager = GroundManager(tiles);
     await groundManager.addGround(world);
 
-    //debugMode = true;
-
-    // Adiciona o Player ao mundo
     player = Player();
-    world.add(player);
-    add(player);
 
-    camera.viewfinder.anchor = Anchor.bottomLeft;
+    world.add(player);
+    //add(player);
+
+    camera.viewfinder.anchor = Anchor.bottomLeft; // sempre por ultimo
+
+    //debugMode = true;
 
     return super.onLoad();
   }
