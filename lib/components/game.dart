@@ -39,11 +39,11 @@ class MyPhysicsGame extends Forge2DGame {
 
     groundManager = GroundManager(tiles);
     await groundManager.addGround(world);
+    //await groundManager.addGround(world);
 
     player = Player();
 
-    world.add(player);
-    //add(player);
+    await world.add(player);
 
     camera.viewfinder.anchor = Anchor.bottomLeft; // sempre por ultimo
 

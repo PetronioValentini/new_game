@@ -9,15 +9,15 @@ enum PlayerState { idle }
 class Player extends BodyComponent {
   late final SpriteAnimationGroupComponent<PlayerState> animationGroup;
   Vector2 velocity = Vector2.zero();
-  final double _gravity = 9.8;
+  final double _gravity = 20;
   final double _jumpForce = 700;
   final double _terminalVelocity = 300;
 
   Player()
       : super(
-          renderBody: true,
+          //renderBody: true,
           bodyDef: BodyDef()
-            ..position = Vector2(800, -500)
+            ..position = Vector2(900, -500)
             ..type = BodyType.dynamic,
           fixtureDefs: [
             FixtureDef(CircleShape()..radius = playerSize / 2)
@@ -60,15 +60,13 @@ class Player extends BodyComponent {
 
   @override
   void update(double dt) {
-    _applyGravity(dt);
-    //position.y += 1;
-    animationGroup.position; 
+    //_applyGravity(dt);
+    //position.y -= 10;
+    //position.x -= 10;
+    animationGroup.position;
     animationGroup.angle = body.angle; // Sincroniza o ângulo
 
-
     super.update(dt);
-
-    //animationGroup.angle = body.angle;
   }
 
   void _applyGravity(double dt) {
@@ -76,6 +74,4 @@ class Player extends BodyComponent {
     velocity.y = velocity.y.clamp(-_jumpForce, _terminalVelocity);
     position.y += velocity.y * dt;
   }
-
-  
 }
