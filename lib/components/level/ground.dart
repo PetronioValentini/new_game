@@ -7,11 +7,10 @@ class Ground extends BodyComponentWithUserData {
 
   Ground(Vector2 position, this.sprite)
       : super(
-          renderBody: false, // Não renderizar o corpo físico
-          bodyDef: BodyDef()
-            ..position = position
-            ..type = BodyType.static,
-        );
+            renderBody: false, // Não renderizar o corpo físico
+            bodyDef: BodyDef()
+              ..position = position
+              ..type = BodyType.static);
 
   @override
   void onMount() {
@@ -22,8 +21,10 @@ class Ground extends BodyComponentWithUserData {
         (sprite.srcSize.x * 1.173) / 2, // Dimensões ajustadas corretamente
         (sprite.srcSize.y * 1.16) / 2,
         Vector2(
-          (sprite.srcSize.x * 1.173) / 2, // Offset para alinhar com o centro do sprite
-          -(sprite.srcSize.y * 1.16) / 2, // Offset y para alinhar ao canto inferior
+          (sprite.srcSize.x * 1.173) /
+              2, // Offset para alinhar com o centro do sprite
+          -(sprite.srcSize.y * 1.16) /
+              2, // Offset y para alinhar ao canto inferior
         ),
         0.0,
       );
@@ -40,7 +41,7 @@ class Ground extends BodyComponentWithUserData {
     add(SpriteComponent(
       sprite: sprite,
       size: Vector2(
-        sprite.srcSize.x * 1.173, 
+        sprite.srcSize.x * 1.173,
         sprite.srcSize.y * 1.16,
       ), // 100% CERTO
       anchor: Anchor.bottomLeft,

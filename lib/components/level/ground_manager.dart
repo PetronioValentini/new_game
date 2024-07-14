@@ -1,6 +1,7 @@
 import 'package:flame/components.dart';
 import 'package:new_game/components/level/ground.dart';
 import 'package:new_game/components/level/xml_sprite_sheet.dart';
+import 'package:new_game/components/boundaries.dart';
 
 class GroundManager {
   final XmlSpriteSheet tiles;
@@ -75,6 +76,8 @@ class GroundManager {
         'position': Vector2(1720, -493),
       },
     ];
+
+    
     for (var config in groundConfig) {
       final Sprite sprite = tiles.getSprite(config['partName']);
       await world.add(

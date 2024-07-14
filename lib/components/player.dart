@@ -1,29 +1,36 @@
 import 'package:flame/components.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
-//import 'package:new_game/components/level/body_component_with_user_data.dart';
+import 'package:flutter/services.dart';
+import 'package:new_game/components/level/ground.dart';
 
-const playerSize = 100.0;
+
+const playerSize = 150.0;
+const double jumpForce = 70000000;
+const double gravity = 1000000000;
+bool isFlip = true;
+bool isJumping = false;
+bool isOnGround = false;
 
 enum PlayerState { idle }
 
-class Player extends BodyComponent {
+class Player extends BodyComponent with KeyboardHandler, ContactCallbacks {
   late final SpriteAnimationGroupComponent<PlayerState> animationGroup;
   Vector2 velocity = Vector2.zero();
-  final double _gravity = 20;
-  final double _jumpForce = 700;
-  final double _terminalVelocity = 300;
 
   Player()
       : super(
-          //renderBody: true,
+          renderBody: false,
           bodyDef: BodyDef()
+            ..fixedRotation
             ..position = Vector2(900, -500)
             ..type = BodyType.dynamic,
           fixtureDefs: [
-            FixtureDef(CircleShape()..radius = playerSize / 2)
+            FixtureDef(
+                PolygonShape()..setAsBoxXY(playerSize / 3, playerSize / 2))
               ..restitution = 0.4
               ..density = 0.75
-              ..friction = 0.5,
+              ..friction = 0.5
+              ..isSensor = false
           ],
         );
 
@@ -34,44 +41,92 @@ class Player extends BodyComponent {
     animationGroup = SpriteAnimationGroupComponent<PlayerState>(
       animations: {
         PlayerState.idle:
-            await loadAnimation('characters/main/idle.png', 10, 10),
+            await loadAnimation('characters/main/rowIdle1.png', 3, 0.15),
       },
       current: PlayerState.idle,
       size: Vector2.all(playerSize),
       anchor: Anchor.center,
     );
-
     add(animationGroup); // Adicione a animação ao componente
   }
 
   Future<SpriteAnimation> loadAnimation(
       String imagePath, int frameCount, double stepTime) async {
     final spriteSheet = await game.images.load(imagePath);
-    final spriteSize = Vector2(142, 206); // Tamanho dos sprites
+    final spriteSize = Vector2(146, 204); // Tamanho dos sprites
+    final texturePosition = Vector2(2, 11);
     return SpriteAnimation.fromFrameData(
       spriteSheet,
       SpriteAnimationData.sequenced(
         amount: frameCount,
         stepTime: stepTime,
         textureSize: spriteSize,
+        //texturePosition: Vector2(2, 11),
+        texturePosition: texturePosition,
       ),
     );
   }
 
   @override
   void update(double dt) {
-    //_applyGravity(dt);
-    //position.y -= 10;
-    //position.x -= 10;
-    animationGroup.position;
-    animationGroup.angle = body.angle; // Sincroniza o ângulo
-
+    body.setTransform(body.position, 0);
     super.update(dt);
   }
 
-  void _applyGravity(double dt) {
-    velocity.y += _gravity;
-    velocity.y = velocity.y.clamp(-_jumpForce, _terminalVelocity);
-    position.y += velocity.y * dt;
+  @override
+  onKeyEvent(KeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
+    if (event.logicalKey == LogicalKeyboardKey.arrowUp) {
+      controlUp();
+    } else if (event.logicalKey == LogicalKeyboardKey.arrowLeft) {
+      controlLeft();
+    } else if (event.logicalKey == LogicalKeyboardKey.arrowRight) {
+      controlRight();
+    }
+
+    return super.onKeyEvent(event, keysPressed);
+  }
+
+  void controlUp() {
+    body.applyLinearImpulse(Vector2(0, -jumpForce));
+  }
+
+  void controlLeft() {
+    body.applyForce(Vector2(-gravity, 0));
+    if (!isFlip) {
+      animationGroup.flipHorizontallyAroundCenter();
+      isFlip = true;
+    }
+  }
+
+  void controlRight() {
+    if (isFlip) {
+      animationGroup.flipHorizontallyAroundCenter();
+      isFlip = false;
+    }
+    body.applyForce(Vector2(gravity, 0));
+  }
+
+  @override
+  void beginContact(Object other, Contact contact) {
+    print("aa");
+    final fixtureA = contact.fixtureA;
+    final fixtureB = contact.fixtureB;
+
+    if ((fixtureA.isSensor || fixtureB.isSensor) && other is Ground) {
+      print("contato inicial");
+      isOnGround = true;
+    }
+  }
+
+  @override
+  void endContact(Object other, Contact contact) {
+    print("aa");
+    final fixtureA = contact.fixtureA;
+    final fixtureB = contact.fixtureB;
+
+    if ((fixtureA.isSensor || fixtureB.isSensor) && other is Ground) {
+      print("contato final");
+      isOnGround = false;
+    }
   }
 }

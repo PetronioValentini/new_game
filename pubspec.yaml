@@ -70,6 +70,7 @@ flutter:
      - assets/images/
      - assets/images/characters/main/
      - assets/images/characters/main/idle.png
+     - assets/images/characters/main/rowIdle1.png
      
 
   # An image asset can refer to one or more resolution-specific "variants", see
