@@ -9,6 +9,7 @@ const double gravity = 10000000000000000000;
 bool isFlip = true;
 bool isJumping = false;
 bool isOnGround = false;
+int groundContactCount = 0; // Contador de contatos com o chão
 
 enum PlayerState { idle }
 
@@ -69,7 +70,7 @@ class Player extends BodyComponent with KeyboardHandler, ContactCallbacks {
   void update(double dt) {
     body.setTransform(body.position, 0);
     
-    camera.moveTo(Vector2(body.position.x, body.position.y -190));
+    camera.moveTo(Vector2(body.position.x, body.position.y - 190));
 
     super.update(dt);
   }
@@ -88,7 +89,7 @@ class Player extends BodyComponent with KeyboardHandler, ContactCallbacks {
   }
 
   void controlUp() {
-    if (isOnGround) {
+    if (isOnGround()) {
       body.applyLinearImpulse(Vector2(0, -jumpForce));
     }
   }
@@ -99,6 +100,10 @@ class Player extends BodyComponent with KeyboardHandler, ContactCallbacks {
       animationGroup.flipHorizontallyAroundCenter();
       isFlip = true;
     }
+  }
+
+  bool isOnGround() {
+    return groundContactCount > 0;
   }
 
   void controlRight() {
@@ -115,7 +120,8 @@ class Player extends BodyComponent with KeyboardHandler, ContactCallbacks {
     final fixtureB = contact.fixtureB;
 
     if (fixtureA.body.userData == this || fixtureB.body.userData == this) {
-      isOnGround = true;
+      //isOnGround = true;
+      groundContactCount++;
     }
     super.beginContact(other, contact);
   }
@@ -126,7 +132,8 @@ class Player extends BodyComponent with KeyboardHandler, ContactCallbacks {
     final fixtureB = contact.fixtureB;
 
     if (fixtureA.body.userData == this || fixtureB.body.userData == this) {
-      isOnGround = false;
+      //isOnGround = false;
+      groundContactCount--;
     }
     super.endContact(other, contact);
   }
