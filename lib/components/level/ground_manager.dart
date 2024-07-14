@@ -1,7 +1,6 @@
 import 'package:flame/components.dart';
 import 'package:new_game/components/level/ground.dart';
 import 'package:new_game/components/level/xml_sprite_sheet.dart';
-import 'package:new_game/components/boundaries.dart';
 
 class GroundManager {
   final XmlSpriteSheet tiles;

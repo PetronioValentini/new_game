@@ -37,7 +37,7 @@ class Ground extends BodyComponentWithUserData {
 
     // Adiciona o FixtureDef ao corpo
     body.createFixture(fixtureDef);
-    body.userData = this;
+    //body.userData = this;
 
     // Adiciona o SpriteComponent para renderização
     add(SpriteComponent(

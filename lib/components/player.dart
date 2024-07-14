@@ -3,8 +3,9 @@ import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:flutter/services.dart';
 
 const playerSize = 150.0;
-const double jumpForce = 1000000; // Ajuste o valor conforme necessário
-const double gravity = 100000000;
+const double jumpForce =
+    10000000000000000000000; // Ajuste o valor conforme necessário
+const double gravity = 10000000000000000000;
 bool isFlip = true;
 bool isJumping = false;
 bool isOnGround = false;
@@ -59,7 +60,6 @@ class Player extends BodyComponent with KeyboardHandler, ContactCallbacks {
         amount: frameCount,
         stepTime: stepTime,
         textureSize: spriteSize,
-        //texturePosition: Vector2(2, 11),
         texturePosition: texturePosition,
       ),
     );
@@ -68,6 +68,9 @@ class Player extends BodyComponent with KeyboardHandler, ContactCallbacks {
   @override
   void update(double dt) {
     body.setTransform(body.position, 0);
+    
+    camera.moveTo(Vector2(body.position.x, body.position.y -210));
+
     super.update(dt);
   }
 
@@ -119,7 +122,6 @@ class Player extends BodyComponent with KeyboardHandler, ContactCallbacks {
 
   @override
   void endContact(Object other, Contact contact) {
-    print("aaaaaa");
     final fixtureA = contact.fixtureA;
     final fixtureB = contact.fixtureB;
 
