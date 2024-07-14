@@ -69,7 +69,7 @@ class Player extends BodyComponent with KeyboardHandler, ContactCallbacks {
   void update(double dt) {
     body.setTransform(body.position, 0);
     
-    camera.moveTo(Vector2(body.position.x, body.position.y -210));
+    camera.moveTo(Vector2(body.position.x, body.position.y -190));
 
     super.update(dt);
   }
