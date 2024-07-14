@@ -9,6 +9,7 @@ class Ground extends BodyComponentWithUserData {
       : super(
             renderBody: false, // Não renderizar o corpo físico
             bodyDef: BodyDef()
+              ..userData = true
               ..position = position
               ..type = BodyType.static);
 
@@ -36,6 +37,7 @@ class Ground extends BodyComponentWithUserData {
 
     // Adiciona o FixtureDef ao corpo
     body.createFixture(fixtureDef);
+    body.userData = this;
 
     // Adiciona o SpriteComponent para renderização
     add(SpriteComponent(

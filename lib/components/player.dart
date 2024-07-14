@@ -1,12 +1,10 @@
 import 'package:flame/components.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:flutter/services.dart';
-import 'package:new_game/components/level/ground.dart';
-
 
 const playerSize = 150.0;
-const double jumpForce = 70000000;
-const double gravity = 1000000000;
+const double jumpForce = 1000000; // Ajuste o valor conforme necessário
+const double gravity = 100000000;
 bool isFlip = true;
 bool isJumping = false;
 bool isOnGround = false;
@@ -27,10 +25,9 @@ class Player extends BodyComponent with KeyboardHandler, ContactCallbacks {
           fixtureDefs: [
             FixtureDef(
                 PolygonShape()..setAsBoxXY(playerSize / 3, playerSize / 2))
-              ..restitution = 0.4
+              ..restitution = 0.0
               ..density = 0.75
               ..friction = 0.5
-              ..isSensor = false
           ],
         );
 
@@ -48,6 +45,7 @@ class Player extends BodyComponent with KeyboardHandler, ContactCallbacks {
       anchor: Anchor.center,
     );
     add(animationGroup); // Adicione a animação ao componente
+    body.userData = this; // Aplica o contato
   }
 
   Future<SpriteAnimation> loadAnimation(
@@ -87,7 +85,9 @@ class Player extends BodyComponent with KeyboardHandler, ContactCallbacks {
   }
 
   void controlUp() {
-    body.applyLinearImpulse(Vector2(0, -jumpForce));
+    if (isOnGround) {
+      body.applyLinearImpulse(Vector2(0, -jumpForce));
+    }
   }
 
   void controlLeft() {
@@ -108,25 +108,24 @@ class Player extends BodyComponent with KeyboardHandler, ContactCallbacks {
 
   @override
   void beginContact(Object other, Contact contact) {
-    print("aa");
     final fixtureA = contact.fixtureA;
     final fixtureB = contact.fixtureB;
 
-    if ((fixtureA.isSensor || fixtureB.isSensor) && other is Ground) {
-      print("contato inicial");
+    if (fixtureA.body.userData == this || fixtureB.body.userData == this) {
       isOnGround = true;
     }
+    super.beginContact(other, contact);
   }
 
   @override
   void endContact(Object other, Contact contact) {
-    print("aa");
+    print("aaaaaa");
     final fixtureA = contact.fixtureA;
     final fixtureB = contact.fixtureB;
 
-    if ((fixtureA.isSensor || fixtureB.isSensor) && other is Ground) {
-      print("contato final");
+    if (fixtureA.body.userData == this || fixtureB.body.userData == this) {
       isOnGround = false;
     }
+    super.endContact(other, contact);
   }
 }

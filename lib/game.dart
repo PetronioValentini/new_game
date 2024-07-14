@@ -10,7 +10,7 @@ import 'package:new_game/components/player.dart';
 class MyPhysicsGame extends Forge2DGame with HasKeyboardHandlerComponents {
   MyPhysicsGame()
       : super(
-            gravity: Vector2(0, 1000),
+            gravity: Vector2(0, 100),
             camera:
                 CameraComponent.withFixedResolution(width: 1800, height: 1200),
             zoom: 1.0);

@@ -82,6 +82,7 @@ class GroundManager {
       final Sprite sprite = tiles.getSprite(config['partName']);
       await world.add(
           Ground(Vector2(config['position'].x, config['position'].y), sprite));
+          
     }
   }
 }
